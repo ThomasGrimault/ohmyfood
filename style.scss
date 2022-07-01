@@ -1,15 +1,21 @@
-// Couleurs
+/* Variables de Couleurs */
 $couleur-primaire: #9356DC ;
 $couleur-secondaire: #FF79DA ;
 $couleur-tertiaire: #99E2D0 ;
 $localisation-bg-color: rgb(237, 236, 236) ;
 $bg-color-gris-clair: rgb(245, 245, 245) ;
 
-// Padding et margin
+/*Variables d'ombres */
+$ombres: 0px 5px 20px rgba(213, 210, 210, 0.988) ;
+
+/* Variables de padding et margin */
 $padding-left-h2-accueil: 20px ;
 
-// Polices
+/* Variables de largeurs d'éléments */
+$width-logo-header: 60% ;
+$width-blocs-menus: 90% ;
 
+/* Style des éléments communs à la page d'accueil et aux pages menus */
 
 body {
     font-family: roboto ;
@@ -23,10 +29,56 @@ header {
     margin-bottom: 15px ;
 
     img {
-        width: 60% ;
+        width: 50% ;
         margin: auto ;
     }
 }
+
+button {
+    width : 50% ;
+    height: 40px ;
+    color: white ;
+    background: linear-gradient(to bottom right, $couleur-secondaire, $couleur-primaire);
+    border: none ;
+    border-radius: 20px ;
+    box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988) ;
+    margin: auto ;
+}
+
+footer {
+    color: white ;
+    background-color: rgb(58, 55, 55);
+    padding-bottom: 20px ;
+
+    p {
+        font-family: Shrikhand ;
+        margin: 0 ;
+        padding-top: 20px ;
+        padding-left: 20px ;
+       
+    }
+
+    ul {
+        list-style-type: none ;
+        margin-left: -20px ;
+
+        li {
+            padding-bottom: 10px ;
+
+            i {
+                width : 2% ;
+                padding-right: 20px ;
+            }
+
+            a {
+                color: white ;
+                text-decoration: none ;
+            }
+        }
+    }
+}
+
+/* Style de la page d'acceuil (index) */
 
 #localisation {
     padding-top : 15px ;
@@ -68,16 +120,6 @@ header {
         text-align: center ;
         margin: auto ;
         margin-bottom: 30px ;
-    }
-
-    button {
-        width : 50% ;
-        height: 40px ;
-        color: white ;
-        background-color: $couleur-secondaire ;
-        border: none ;
-        border-radius: 20px ;
-        margin: auto ;
     }
 }
 
@@ -181,44 +223,94 @@ header {
             padding-right: 20px ;
             }
         }
-    
-        
     }
 }
 
-footer {
-    color: white ;
-    background-color: rgb(58, 55, 55);
-    padding-bottom: 20px ;
+/* Style des pages menus */
 
-    p {
-        font-family: Shrikhand ;
-        margin: 0 ;
-        padding-top: 20px ;
+.header-menu {
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+
+    i {
+        color: black ;
         padding-left: 20px ;
-       
     }
 
-    ul {
-        list-style-type: none ;
-        margin-left: -20px ;
+    img {
+        position: relative ;
+        left: -20px ;
+    }
 
-        li {
-            padding-bottom: 10px ;
+}
 
-            i {
-                width : 2% ;
-                padding-right: 20px ;
+.photo-menu {
+    width: 100% ;
+}
+
+.menu {
+    border-radius: 30px 30px 0 0 ;
+    background-color: $bg-color-gris-clair ;
+    position: relative ;
+    
+    display: flex ;
+    flex-direction: column ;
+    vertical-align: middle ;
+
+    .menu__nom-restaurant {
+        font-family: shrikhand ;
+        width : $width-blocs-menus ;
+        display: flex ;
+        text-align: center ;
+        justify-content : space-between ;
+        padding-top: 15px ;
+
+        i {
+            font-size: x-large ;
+        }
+    }
+
+    h2 {
+        text-transform: uppercase ;
+    }
+
+    .menu__carte-plat {
+        width: $width-blocs-menus ;
+        background-color: white ;
+        border-radius: 15px ;
+        margin-bottom : 20px ;
+        box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988) ;
+
+        h3 {
+            margin : 0 ;
+            padding-top: 10px ;
+            padding-left: 10px ;
+        }
+
+        .menu__accompagnement-prix {
+            display: flex ;
+            justify-content: space-between ;
+            padding : 10px 20px 10px 10px ;
+
+            p {
+                margin : 0 ;
             }
 
-            a {
-                color: white ;
-                text-decoration: none ;
+            .prix {
+                font-weight: bold ;
             }
         }
     }
 }
 
+#bouton-commander {
+    display :flex ;
+    justify-content: center ;
+    padding-top: 20px ;
+    padding-bottom: 60px ;
+    background-color: $bg-color-gris-clair ;
+}
 
 
 
