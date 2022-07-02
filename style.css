@@ -3,9 +3,10 @@
 /*Variables d'ombres */
 /* Variables de padding et margin */
 /* Variables de largeurs d'éléments */
+/* Animations */
 /* Style des éléments communs à la page d'accueil et aux pages menus */
 body {
-  font-family: roboto;
+  font: roboto;
   margin: 0;
 }
 
@@ -20,7 +21,7 @@ header img {
   margin: auto;
 }
 
-button {
+.bouton-rose {
   width: 50%;
   height: 40px;
   color: white;
@@ -37,7 +38,7 @@ footer {
   padding-bottom: 20px;
 }
 footer p {
-  font-family: Shrikhand;
+  font: Shrikhand;
   margin: 0;
   padding-top: 20px;
   padding-left: 20px;
@@ -96,6 +97,10 @@ footer ul li a {
   text-align: center;
   margin: auto;
   margin-bottom: 30px;
+}
+#présentation a {
+  text-decoration: none;
+  color: white;
 }
 
 #fonctionnement {
@@ -164,11 +169,26 @@ footer ul li a {
   text-decoration: none;
   color: black;
 }
-#restaurants .carte-restaurant img {
-  width: 100%;
+#restaurants .carte-restaurant .photo-tampon {
   height: 75%;
+  display: flex;
+}
+#restaurants .carte-restaurant .photo-tampon img {
+  width: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+}
+#restaurants .carte-restaurant .photo-tampon .tampon {
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  color: rgb(0, 102, 0);
+  background-color: #99E2D0;
+  padding: 5px 10px 5px 10px;
+  border-radius: 2px;
+  position: relative;
+  top: 20px;
+  right: 85px;
 }
 #restaurants .carte-restaurant .carte-restaurant__légende {
   display: flex;
@@ -221,8 +241,17 @@ footer ul li a {
   justify-content: space-between;
   padding-top: 15px;
 }
-.menu .menu__nom-restaurant i {
+.menu .menu__nom-restaurant .bouton-coeur {
+  border: none;
+  background-color: rgb(245, 245, 245);
+}
+.menu .menu__nom-restaurant .bouton-coeur i {
   font-size: x-large;
+  border: none;
+  background-color: rgb(245, 245, 245);
+}
+.menu .menu__nom-restaurant .bouton-coeur i :active {
+  background-color: red;
 }
 .menu h2 {
   text-transform: uppercase;

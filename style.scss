@@ -15,10 +15,12 @@ $padding-left-h2-accueil: 20px ;
 $width-logo-header: 60% ;
 $width-blocs-menus: 90% ;
 
+/* Animations */
+
 /* Style des éléments communs à la page d'accueil et aux pages menus */
 
 body {
-    font-family: roboto ;
+    font: roboto ;
     margin: 0 ;
 }
 
@@ -34,7 +36,7 @@ header {
     }
 }
 
-button {
+.bouton-rose {
     width : 50% ;
     height: 40px ;
     color: white ;
@@ -51,7 +53,7 @@ footer {
     padding-bottom: 20px ;
 
     p {
-        font-family: Shrikhand ;
+        font: Shrikhand ;
         margin: 0 ;
         padding-top: 20px ;
         padding-left: 20px ;
@@ -120,6 +122,11 @@ footer {
         text-align: center ;
         margin: auto ;
         margin-bottom: 30px ;
+    }
+
+    a {
+        text-decoration: none ;
+        color: white ;
     }
 }
 
@@ -198,12 +205,29 @@ footer {
             color : black ;
         }
 
-        img {
-            width: 100% ;
+        .photo-tampon {
             height: 75% ;
-            object-fit: cover ;
-            border-radius: 15px 15px 0 0 ;
-        }
+            display: flex ;
+
+            img {
+                width: 100% ;
+                object-fit: cover ;
+                border-radius: 15px 15px 0 0 ;
+            }
+
+            .tampon {
+                width: 50px ;
+                height: 25px ;
+                text-align: center ;
+                color: rgb(0, 102, 0) ;
+                background-color: $couleur-tertiaire ;
+                padding: 5px 10px 5px 10px ;
+                border-radius: 2px ;
+                position: relative ;
+                top: 20px ;
+                right: 85px ;
+            }
+        }       
 
         .carte-restaurant__légende  {
             display: flex ;
@@ -266,8 +290,18 @@ footer {
         justify-content : space-between ;
         padding-top: 15px ;
 
-        i {
+        .bouton-coeur {
+            border: none ;
+            background-color: $bg-color-gris-clair ;
+
+            i {
             font-size: x-large ;
+            border: none ;
+            background-color: $bg-color-gris-clair ;
+            & :active {
+                background-color: red ;
+            }
+            }
         }
     }
 
