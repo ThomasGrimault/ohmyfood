@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/aa8edaacd5.js" crossorigin="anonymous"></script>
-    <link href="https : //fonts.googleapis.com/css2?family= Roboto & family = Shrikhand & display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');</style>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>ohmyfood - A la française</title>
+    <title>ohmyfood - Menu "A la française"</title>
 </head>
 
 <body>
@@ -19,7 +20,9 @@
 
     <main>
 
-        <img class="photo-menu" src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Photo restaurant A la française">
+        <div class="photo-menu">
+        <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Photo restaurant A la française">
+        </div>
 
         <section class="menu">
 
@@ -28,7 +31,8 @@
                 <button class="bouton-coeur"><i class="fa-regular fa-heart"></i></button>
             </div>
 
-            <h2>Entrées</h2>
+            <h2><span class="soulignement">Entr</span>ées</h2>
+
             <div class="menu__carte-plat">
                 <h3>Tartare de poulpe acidulé</h3>
                 <div class="menu__accompagnement-prix">
@@ -51,7 +55,7 @@
                 </div>
             </div>
 
-            <h2>Plats</h2>
+            <h2><span class="soulignement">Plat</span>s</h2>
             <div class="menu__carte-plat">
                 <h3>Coquilles Saint-Jacques</h3>
                 <div class="menu__accompagnement-prix">
@@ -74,7 +78,7 @@
                 </div>
             </div>
 
-            <h2>Desserts</h2>
+            <h2><span class="soulignement">Dess</span>erts</h2>
             <div class="menu__carte-plat">
                 <h3>Pétales de violettes glacés</h3>
                 <div class="menu__accompagnement-prix">
