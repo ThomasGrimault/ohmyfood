@@ -5,6 +5,7 @@ $couleur-tertiaire: #99E2D0 ;
 $localisation-bg-color: rgb(237, 236, 236) ;
 $bg-color-gris-clair: rgb(245, 245, 245) ;
 $bouton-rose-bg-color: linear-gradient(175deg, $couleur-secondaire, $couleur-primaire) ;
+$bouton-rose-bg-color-lighten: linear-gradient(175deg, lighten($couleur-secondaire, 5%), lighten($couleur-primaire, 5%)) ;
 
 /*Variables d'ombres */
 $ombres: 0px 5px 20px rgba(213, 210, 210, 0.988) ;
@@ -51,8 +52,8 @@ header {
     cursor: pointer ;
 
     &:hover {
-        background-color: lighten ($bouton-rose-bg-color, 10%) ;
-        box-shadow: opx 5px 20px rgba(135, 134, 134, 0.988);
+        background: $bouton-rose-bg-color-lighten ;
+        box-shadow: 0px 5px 20px rgba(135, 134, 134, 0.988);
     }
 }
 
@@ -369,7 +370,7 @@ footer {
             font-size: 25px ;
             margin-top: 17px ;
         }
-   
+
     }
 
     h2 {
@@ -386,14 +387,27 @@ footer {
         }
     }
 
-    .menu__carte-plat {
+    .menu__carte {
         width: $width-blocs-menus ;
         background-color: white ;
         border-radius: 15px ;
         margin: auto ;
         margin-bottom : 15px ;
+        display: flex ;
         box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988) ;
 
+        .menu__carte__descriptif {
+            width: 100% ;
+
+            &:active + .menu__circle-check {
+                transform: translateX(-100px)
+            }
+
+            &:active + .menu__circle-check i {
+                transform: rotate(360deg)
+            }
+
+        }
         h3 {
             margin : 0 ;
             padding-top: 10px ;
@@ -401,6 +415,7 @@ footer {
         }
 
         .menu__accompagnement-prix {
+            
             display: flex ;
             justify-content: space-between ;
             padding : 10px 20px 10px 10px ;
@@ -409,9 +424,33 @@ footer {
                 margin : 0 ;
             }
 
+            .accompagnement {
+                white-space: nowrap ;
+                overflow: hidden ;
+                text-overflow: ellipsis ;
+            }
+
             .prix {
                 font-weight: bold ;
             }
+        }
+
+        .menu__circle-check {
+            width : 25% ;
+            background-color: $couleur-tertiaire ;
+            border-radius: 0 15px 15px 0 ;
+            display: flex ;
+            vertical-align: middle ;
+            justify-content :center ;
+            transition: transform 400ms ease-in-out ;
+        }
+        .menu__circle-check i {
+            display: block ;
+            font-size: 40px ;
+            color: $couleur-tertiaire ;
+            background-color: white ;
+            border-radius: 150px ;
+            margin: auto ;
         }
     }
 }
