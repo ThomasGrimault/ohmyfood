@@ -1,10 +1,10 @@
 @charset "UTF-8";
-/* Variables de Couleurs */
-/*Variables d'ombres */
-/* Variables de padding et margin */
-/* Variables de largeurs d'éléments */
-/* Animations */
-/* Style des éléments communs à la page d'accueil et aux pages menus */
+/* ======== variables ======== */
+/* Couleurs */
+/* Ombres */
+/* Padding et margin */
+/* Largeurs d'éléments */
+/* ======== Eléments communs à la page d'accueil et aux menus ======== */
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -33,8 +33,8 @@ header img {
   cursor: pointer;
 }
 .bouton-rose:hover {
-  background: linear-gradient(175deg, #ff93e1, #a16be0);
-  box-shadow: 0px 5px 20px rgba(135, 134, 134, 0.988);
+  background: linear-gradient(175deg, #ff88de, #9b63df);
+  box-shadow: 0px 5px 20px rgba(91, 90, 90, 0.988);
 }
 
 .bouton-coeur {
@@ -90,7 +90,46 @@ footer ul li a {
   text-decoration: none;
 }
 
-/* Style de la page d'acceuil (index) */
+/* ======== Page d'acceuil (index) ======== */
+/* Animations */
+@keyframes loader-barre {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes page-accueil {
+  0% {
+    transform: translateX(-9999px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Eléments */
+.loader {
+  width: 80%;
+  margin: auto;
+}
+.loader .loader-cadre {
+  border: 2px solid #9356DC;
+}
+.loader .loader-barre {
+  background-color: #FF79DA;
+  margin: 2px;
+  padding: 5px;
+  transform-origin: 0%;
+  animation: loader-barre 2s 1s;
+  animation-fill-mode: both;
+}
+
+.page-accueil {
+  animation: page-accueil 0s 3s;
+  animation-fill-mode: both;
+}
+
 #localisation {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -261,7 +300,17 @@ footer ul li a {
   font-size: 20px;
 }
 
-/* Style des pages menus */
+/* ======== Pages menus ======== */
+/* Animations */
+@keyframes menu-carte {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Eléments */
 .header-menu {
   display: flex;
   justify-content: center;
@@ -331,12 +380,19 @@ footer ul li a {
   margin-bottom: 15px;
   display: flex;
   box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: menu-carte 1s 2s;
 }
 .menu .menu__carte .menu__carte__descriptif {
   width: 100%;
+  transform-origin: 0%;
+  transform: scaleX(1);
+}
+.menu .menu__carte .menu__carte__descriptif:active {
+  transform: scaleX(0.75);
+  transition: transform 400ms ease-in-out;
 }
 .menu .menu__carte .menu__carte__descriptif:active + .menu__circle-check {
-  transform: translateX(-100px);
+  transform: scaleX(1);
 }
 .menu .menu__carte .menu__carte__descriptif:active + .menu__circle-check i {
   transform: rotate(360deg);
@@ -353,6 +409,7 @@ footer ul li a {
 }
 .menu .menu__carte .menu__accompagnement-prix p {
   margin: 0;
+  font-size: 14px;
 }
 .menu .menu__carte .menu__accompagnement-prix .accompagnement {
   white-space: nowrap;
@@ -369,6 +426,8 @@ footer ul li a {
   display: flex;
   vertical-align: middle;
   justify-content: center;
+  transform-origin: 100%;
+  transform: scaleX(0);
   transition: transform 400ms ease-in-out;
 }
 .menu .menu__carte .menu__circle-check i {
@@ -378,6 +437,7 @@ footer ul li a {
   background-color: white;
   border-radius: 150px;
   margin: auto;
+  transition: transform 400ms ease-in-out;
 }
 
 #bouton-commander {
