@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/* ======== variables ======== */
-/* Couleurs */
-/* Ombres */
-/* Padding et margin */
-/* Largeurs d'éléments */
-/* taille des boutons coeurs */
-/* curseur des boutons */
 /* ======== Eléments communs à la page d'accueil et aux menus ======== */
 body {
   font-family: "Roboto", sans-serif;
@@ -48,7 +41,6 @@ header img {
   display: flex;
   vertical-align: middle;
   cursor: pointer;
-  z-index: 1;
 }
 .bouton-coeur i {
   font-size: 25px;
@@ -56,7 +48,7 @@ header img {
 .bouton-coeur:hover .bouton-coeur-plein {
   opacity: 1;
 }
-.bouton-coeur .bouton-coeur-plein {
+.bouton-coeur-plein {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -68,10 +60,9 @@ header img {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
   transition: opacity 500ms;
 }
-.bouton-coeur .bouton-coeur-plein i {
+.bouton-coeur-plein i {
   font-size: 25px;
 }
 
@@ -103,7 +94,6 @@ footer ul li a {
 }
 
 /* ======== Page d'acceuil (index) ======== */
-/* Animations */
 @keyframes loader {
   0% {
     Transform: translateX(-9999px);
@@ -128,7 +118,6 @@ footer ul li a {
     transform: translateX(0);
   }
 }
-/* Eléments */
 .loader {
   width: 80%;
   display: flex;
@@ -145,10 +134,10 @@ footer ul li a {
   margin: auto;
   padding-bottom: 15px;
 }
-.loader .loader-cadre {
+.loader-cadre {
   border: 2px solid #9356DC;
 }
-.loader .loader-barre {
+.loader-barre {
   background-color: #FF79DA;
   margin: 2px;
   padding: 5px;
@@ -158,8 +147,7 @@ footer ul li a {
 }
 
 .page-accueil {
-  animation: page-accueil 0s 3s;
-  animation-fill-mode: both;
+  animation: page-accueil 0s 3s both;
 }
 
 #localisation {
@@ -221,7 +209,8 @@ footer ul li a {
   padding-left: 20px;
   padding-bottom: 10px;
 }
-#fonctionnement .carte-fonct {
+
+.carte-fonct {
   width: 90%;
   background-color: rgb(245, 245, 245);
   border-radius: 20px;
@@ -232,7 +221,7 @@ footer ul li a {
   margin-bottom: 30px;
   box-shadow: 0px 5px 20px rgba(213, 210, 210, 0.988);
 }
-#fonctionnement .carte-fonct .carte-fonct__numéro {
+.carte-fonct__numéro {
   color: white;
   background-color: #9356DC;
   width: 25px;
@@ -244,20 +233,20 @@ footer ul li a {
   justify-content: center;
   align-items: center;
 }
-#fonctionnement .carte-fonct i {
+.carte-fonct i {
   color: grey;
   margin: auto;
   margin-left: 20px;
   margin-right: 20px;
 }
-#fonctionnement .carte-fonct .carte-fonct__consigne {
+.carte-fonct__consigne {
   font-weight: bold;
   text-align: center;
 }
-#fonctionnement :active {
+.carte-fonct:active {
   background-color: #f2eafb;
 }
-#fonctionnement :active i {
+.carte-fonct:active i {
   color: #9356DC;
 }
 
@@ -271,7 +260,8 @@ footer ul li a {
   padding-top: 30px;
   padding-left: 20px;
 }
-#restaurants .carte-restaurant {
+
+.carte-restaurant {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -280,16 +270,16 @@ footer ul li a {
   margin: auto;
   margin-bottom: 20px;
 }
-#restaurants .carte-restaurant a {
+.carte-restaurant a {
   width: 100%;
   text-decoration: none;
   color: black;
 }
-#restaurants .carte-restaurant .photo-tampon {
+.carte-restaurant .photo-tampon {
   width: 100%;
   display: flex;
 }
-#restaurants .carte-restaurant .photo-tampon img {
+.carte-restaurant .photo-tampon img {
   width: 100%;
   height: 175px;
   object-fit: cover;
@@ -297,7 +287,7 @@ footer ul li a {
   position: relative;
   z-index: 1;
 }
-#restaurants .carte-restaurant .photo-tampon .tampon {
+.carte-restaurant .photo-tampon .tampon {
   width: 20%;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -314,33 +304,39 @@ footer ul li a {
   margin-top: 20px;
   z-index: 2;
 }
-#restaurants .carte-restaurant .carte-restaurant__légende {
+.carte-restaurant__légende {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 10px;
 }
-#restaurants .carte-restaurant .carte-restaurant__légende .carte-restaurant__nom {
+.carte-restaurant__légende__nom {
   margin: 20px 0 0 5px;
-}
-#restaurants .carte-restaurant .carte-restaurant__légende .carte-restaurant__localisation {
-  margin: 5px 0 15px 5px;
-}
-#restaurants .carte-restaurant .carte-restaurant__légende .carte-restaurant__nom {
   font-weight: bold;
+}
+.carte-restaurant__légende__localisation {
+  margin: 5px 0 15px 5px;
 }
 
 /* ======== Pages menus ======== */
-/* Animations */
-@keyframes menu-carte {
+@keyframes carte-menu {
   0% {
     opacity: 0;
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
-/* Eléments */
+@keyframes carte-menu__circle-check {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 25%;
+  }
+}
 .header-menu {
   display: flex;
   justify-content: center;
@@ -375,7 +371,7 @@ footer ul li a {
   display: flex;
   flex-direction: column;
 }
-.menu .menu__nom-restaurant {
+.menu__nom-restaurant {
   font-family: shrikhand;
   font-size: 13px;
   font-weight: 200;
@@ -386,7 +382,7 @@ footer ul li a {
   padding-top: 15px;
   padding-left: 25px;
 }
-.menu .menu__nom-restaurant .bouton-coeur {
+.menu__nom-restaurant .bouton-coeur {
   font-size: 25px;
   margin-top: 17px;
 }
@@ -402,7 +398,8 @@ footer ul li a {
   padding-bottom: 5px;
   Border-bottom: 3px solid #99E2D0;
 }
-.menu .menu__carte {
+
+.carte-menu-1 {
   width: 90%;
   background-color: white;
   border-radius: 15px;
@@ -410,47 +407,191 @@ footer ul li a {
   margin-bottom: 15px;
   display: flex;
   box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
-  animation: menu-carte 1s 2s;
+  animation: carte-menu 1s 0.2s both;
 }
-.menu .menu__carte .menu__carte__descriptif {
-  width: 100%;
-  cursor: pointer;
-  transform-origin: 0%;
-  transform: scaleX(1);
-}
-.menu .menu__carte .menu__carte__descriptif:active {
-  transform: scaleX(0.75);
-  transition: transform 400ms ease-in-out;
-}
-.menu .menu__carte .menu__carte__descriptif:active + .menu__circle-check {
-  transform: scaleX(1);
-}
-.menu .menu__carte .menu__carte__descriptif:active + .menu__circle-check i {
-  transform: rotate(360deg);
-}
-.menu .menu__carte h3 {
+.carte-menu-1 h3 {
   margin: 0;
   padding-top: 10px;
   padding-left: 10px;
 }
-.menu .menu__carte .menu__accompagnement-prix {
+
+.carte-menu-2 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 0.4s both;
+}
+.carte-menu-2 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu-3 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 0.6s both;
+}
+.carte-menu-3 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu-4 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 0.8s both;
+}
+.carte-menu-4 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu-5 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 1s both;
+}
+.carte-menu-5 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu-6 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 1.2s both;
+}
+.carte-menu-6 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu-7 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 1.4s both;
+}
+.carte-menu-7 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu-8 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 1.6s both;
+}
+.carte-menu-8 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu-9 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 1.8s both;
+}
+.carte-menu-9 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu-10 {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988);
+  animation: carte-menu 1s 2s both;
+}
+.carte-menu-10 h3 {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.carte-menu__descriptif {
+  width: 100%;
+  cursor: pointer;
+}
+.carte-menu__descriptif:active + .carte-menu__circle-check {
+  transform: scaleX(1);
+}
+.carte-menu__descriptif:active + .carte-menu__circle-check i {
+  transform: rotate(360deg);
+}
+.carte-menu__descriptif__accompagnement-prix {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px 10px 10px;
 }
-.menu .menu__carte .menu__accompagnement-prix p {
+.carte-menu__descriptif__accompagnement-prix p {
   margin: 0;
   font-size: 14px;
 }
-.menu .menu__carte .menu__accompagnement-prix .accompagnement {
+.carte-menu__descriptif__accompagnement-prix .accompagnement {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  position: relative;
+  left: 0;
 }
-.menu .menu__carte .menu__accompagnement-prix .prix {
+.carte-menu__descriptif__accompagnement-prix .prix {
   font-weight: bold;
+  position: relative;
+  right: 0;
 }
-.menu .menu__carte .menu__circle-check {
+
+.carte-menu__circle-check {
   width: 25%;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
@@ -461,7 +602,7 @@ footer ul li a {
   transform: scaleX(0);
   transition: transform 400ms ease-in-out;
 }
-.menu .menu__carte .menu__circle-check i {
+.carte-menu__circle-check i {
   display: block;
   font-size: 40px;
   color: #99E2D0;

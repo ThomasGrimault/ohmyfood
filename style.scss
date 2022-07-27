@@ -1,6 +1,6 @@
-/* ======== variables ======== */
+// ======== variables ========
 
-/* Couleurs */
+// Couleurs
 $couleur-primaire: #9356DC ;
 $couleur-secondaire: #FF79DA ;
 $couleur-tertiaire: #99E2D0 ;
@@ -9,22 +9,22 @@ $bg-color-gris-clair: rgb(245, 245, 245) ;
 $bouton-rose-bg-color: linear-gradient(175deg, $couleur-secondaire, $couleur-primaire) ;
 $bouton-rose-bg-color-lighten: linear-gradient(175deg, lighten($couleur-secondaire, 3%), lighten($couleur-primaire, 3%)) ;
 
-/* Ombres */
+// Ombres
 $ombres: 0px 5px 20px rgba(213, 210, 210, 0.988) ;
 $ombres-marquees: 0px 5px 20px rgba(91, 90, 90, 0.988) ;
 
-/* Padding et margin */
+// Padding et margin
 $padding-left-h2-accueil: 20px ;
 $padding-left-h1-h2-menu: 25px ;
 
-/* Largeurs d'éléments */
+// Largeurs d'éléments
 $width-blocs-menus: 90% ;
 $width-bouton-rose: 55% ;
 
-/* taille des boutons coeurs */
+// taille des boutons coeurs
 $taille-bouton-coeur: 25px ;
 
-/* curseur des boutons */
+// curseur des boutons
 $pointer: pointer ;
 
 /* ======== Eléments communs à la page d'accueil et aux menus ======== */
@@ -72,8 +72,7 @@ header {
     display: flex ;
     vertical-align: middle ;
     cursor: $pointer ;
-    z-index: 1 ;
-
+    
     i {
         font-size: $taille-bouton-coeur ;
     }
@@ -83,7 +82,8 @@ header {
             opacity: 1 ;
         }
     }
-    .bouton-coeur-plein {
+
+    &-plein {
         color: transparent ;
         background-clip: text ;
         -webkit-background-clip: text ;
@@ -94,8 +94,7 @@ header {
         top: 0 ;
         right: 0 ;
         bottom: 0 ;
-        left: 0 ;
-        z-index: -1 ;
+        left: 0 ; 
         transition: opacity 500ms ;
 
         i {
@@ -114,6 +113,7 @@ footer {
         margin: 0 ;
         padding: 30px 0 10px 25px ;
     }
+
     ul {
         list-style-type: none ;
         margin-left: -15px ;
@@ -126,6 +126,7 @@ footer {
                 width : 2% ;
                 padding-right: 20px ;
             }
+
             a {
                 color: white ;
                 text-decoration: none ;
@@ -136,7 +137,7 @@ footer {
 
 /* ======== Page d'acceuil (index) ======== */
 
-/* Animations */
+// Animations
 
 @keyframes loader {
     0% {
@@ -146,6 +147,7 @@ footer {
         Transform: translateX(0)
     }
 }
+
 @keyframes loader-barre {
     0% {
         transform: scaleX(0) ;
@@ -154,6 +156,7 @@ footer {
         transform: scaleX(1)
     }
 }
+
 @keyframes page-accueil {
     0% {
         transform: translateX(-9999px) ;
@@ -163,7 +166,7 @@ footer {
     }
 }
 
-/* Eléments */
+// Eléments
 
 .loader {
     width: 80% ;
@@ -181,10 +184,12 @@ footer {
         margin: auto ;
         padding-bottom: 15px ;
     }
-    .loader-cadre {
+
+    &-cadre {
         border : 2px solid $couleur-primaire ;
     }
-    .loader-barre {
+
+    &-barre {
         background-color: $couleur-secondaire ;
         margin: 2px ;
         padding: 5px ;
@@ -195,8 +200,7 @@ footer {
 }
 
 .page-accueil {
-    animation: page-accueil 0s 3s ;
-    animation-fill-mode: both ;
+    animation: page-accueil 0s 3s both ;
 }
 
 #localisation {
@@ -212,6 +216,7 @@ footer {
         margin-left: 40px ;
         margin-right: 10px ;
     }
+
     input{
         font-weight: bold ;
         background-color: $localisation-bg-color ;
@@ -236,6 +241,7 @@ footer {
         margin: auto ;
         margin-bottom: 15px ;
     }
+
     p {
         font-size: 17px ;
         width: 80% ;
@@ -244,6 +250,7 @@ footer {
         margin: auto ;
         margin-bottom: 30px ;
     }
+
     a {
         width : $width-bouton-rose ;
         text-decoration: none ;
@@ -260,41 +267,45 @@ footer {
         padding-left: $padding-left-h2-accueil ;
         padding-bottom: 10px ;
     }
-    .carte-fonct {
-        width: 90% ;
-        background-color: $bg-color-gris-clair ;
-        border-radius: 20px ;
-        display: flex ;
-        align-items: center ;
-        padding : 5px 0 5px 0 ;
-        margin: auto ;
-        margin-bottom: 30px ;
-        box-shadow: 0px 5px 20px rgba(213, 210, 210, 0.988) ;
+}
 
-        .carte-fonct__numéro {
-            color: white ;
-            background-color: $couleur-primaire ;
-            width: 25px ;
-            height: 25px ;
-            border-radius: 100px ;
-            position: relative ;
-            right : 10px ;
-            display: flex ;
-            justify-content: center ;
-            align-items: center ;
-        }
-        i {
-            color: grey ;
-            margin: auto ;
-            margin-left: 20px ;
-            margin-right: 20px ;
-            }
-        .carte-fonct__consigne {
-            font-weight: bold ;
-            text-align: center ;
-        }
+.carte-fonct {
+    width: 90% ;
+    background-color: $bg-color-gris-clair ;
+    border-radius: 20px ;
+    display: flex ;
+    align-items: center ;
+    padding : 5px 0 5px 0 ;
+    margin: auto ;
+    margin-bottom: 30px ;
+    box-shadow: 0px 5px 20px rgba(213, 210, 210, 0.988) ;
+
+    &__numéro {
+        color: white ;
+        background-color: $couleur-primaire ;
+        width: 25px ;
+        height: 25px ;
+        border-radius: 100px ;
+        position: relative ;
+        right : 10px ;
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
     }
-    & :active {
+
+    i {
+        color: grey ;
+        margin: auto ;
+        margin-left: 20px ;
+        margin-right: 20px ;
+        }
+
+    &__consigne {
+        font-weight: bold ;
+        text-align: center ;
+    }
+
+    &:active {
         background-color: lighten($couleur-primaire, 35%) ;
         i {
             color: $couleur-primaire ;
@@ -312,83 +323,140 @@ footer {
         padding-top: 30px ;
         padding-left: $padding-left-h2-accueil
     }
-    .carte-restaurant {
-        width: 90% ;
+}
+
+.carte-restaurant {
+    width: 90% ;
+    display: flex ;
+    flex-direction: column ;
+    background-color: white ;
+    border-radius: 15px ;
+    margin: auto ;
+    margin-bottom : 20px ;
+
+    a {
+        width: 100% ;
+        text-decoration: none ;
+        color : black ;
+    }
+    .photo-tampon {
+        width: 100% ;
         display: flex ;
-        flex-direction: column ;
-        background-color: white ;
-        border-radius: 15px ;
-        margin: auto ;
-        margin-bottom : 20px ;
-    
-        a {
+
+        img {
             width: 100% ;
-            text-decoration: none ;
-            color : black ;
+            height: 175px ;
+            object-fit: cover ;
+            border-radius: 15px 15px 0 0 ;
+            position: relative ;
+            z-index: 1 ;
         }
-        .photo-tampon {
-            width: 100% ;
+        .tampon {
+            width: 20% ;
+            padding-top: 6px ;
+            padding-bottom: 6px ;
+            font-size: 13px ;
+            font-weight: bold ;
             display: flex ;
-
-            img {
-                width: 100% ;
-                height: 175px ;
-                object-fit: cover ;
-                border-radius: 15px 15px 0 0 ;
-                position: relative ;
-                z-index: 1 ;
-            }
-            .tampon {
-                width: 20% ;
-                padding-top: 6px ;
-                padding-bottom: 6px ;
-                font-size: 13px ;
-                font-weight: bold ;
-                display: flex ;
-                justify-content: center ;
-                align-items: center ;
-                color: darken($couleur-tertiaire, 35%) ;
-                background-color: $couleur-tertiaire ;
-                border-radius: 2px ;
-                position: absolute ;
-                right : 30px ;
-                margin-top: 20px ;
-                z-index: 2 ;
-            }
-        }       
-        .carte-restaurant__légende  {
-            display: flex ;
-            justify-content: space-between ;
+            justify-content: center ;
             align-items: center ;
-            padding-left: 10px ;
+            color: darken($couleur-tertiaire, 35%) ;
+            background-color: $couleur-tertiaire ;
+            border-radius: 2px ;
+            position: absolute ;
+            right : 30px ;
+            margin-top: 20px ;
+            z-index: 2 ;
+        }
+    }       
+    &__légende  {
+        display: flex ;
+        justify-content: space-between ;
+        align-items: center ;
+        padding-left: 10px ;
 
-            .carte-restaurant__nom {
-                margin : 20px 0 0 5px ;
-            }
-            .carte-restaurant__localisation {
-                margin: 5px 0 15px 5px ;
-            }
-            .carte-restaurant__nom {
-                font-weight: bold ;
-            }
+        &__nom {
+            margin : 20px 0 0 5px ;
+            font-weight: bold ;
+        }
+        &__localisation {
+            margin: 5px 0 15px 5px ;
         }
     }
 }
+
 
 /* ======== Pages menus ======== */
 
-/* Animations */
+// Animations
 
-@keyframes menu-carte {
+@keyframes carte-menu {
     0% {
         opacity: 0 ;
+        transform: translateY(20px);
     }
     100% {
         opacity: 1 ;
+        transform: translateY(0);
     }
 }
 
-/* Eléments */
+// Variables délai animation carte-menu
+$animation-duration-affichage-carte-menu: 1s ;
+$animation-delay-affichage-carte-menu: 0.2s ;
+
+
+@keyframes carte-menu__circle-check {
+    0% {
+        width: 0 ;
+    }
+    100% {
+        width: 25% ;
+    }
+}
+
+// mixin
+
+@mixin carte-menu {
+    width: $width-blocs-menus ;
+    background-color: white ;
+    border-radius: 15px ;
+    margin: auto ;
+    margin-bottom : 15px ;
+    display: flex ;
+    box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988) ;
+    
+}
+
+@mixin carte-menu-h3 {
+    margin : 0 ;
+    padding-top: 10px ;
+    padding-left: 10px ;
+}
+
+@mixin carte-menu-descriptif {
+    width: 100% ;
+        cursor: $pointer ;
+        
+        &:active + .carte-menu__circle-check {
+            transform: scaleX(1) ;
+        }
+        &:active + .carte-menu__circle-check i {
+            transform: rotate(360deg) ;
+        }
+}
+
+@mixin carte-menu-descriptif-accompagnement-prix {
+    display: flex ;
+    justify-content: space-between ;
+    padding : 10px 20px 10px 10px ;
+    
+    p {
+        margin : 0 ;
+        font-size: 14px ;
+    }
+}
+// Eléments
 
 .header-menu {
     display: flex ;
@@ -426,7 +494,7 @@ footer {
     display: flex ;
     flex-direction: column ;
 
-    .menu__nom-restaurant {
+    &__nom-restaurant {
         font-family: shrikhand ;
         font-size: 13px ;
         font-weight: 200 ;
@@ -442,6 +510,7 @@ footer {
             margin-top: 17px ;
         }
     }
+
     h2 {
         font-size: 16px ;
         text-transform: uppercase ;
@@ -455,74 +524,165 @@ footer {
             Border-bottom: 3px solid $couleur-tertiaire ;
         }
     }
-    .menu__carte {
-        width: $width-blocs-menus ;
-        background-color: white ;
-        border-radius: 15px ;
-        margin: auto ;
-        margin-bottom : 15px ;
-        display: flex ;
-        box-shadow: 0px 5px 20px rgba(179, 176, 176, 0.988) ;
-        animation: menu-carte 1s 2s ;
+}
 
-        .menu__carte__descriptif {
-            width: 100% ;
-            cursor: $pointer ;
-            transform-origin: 0% ;
-            transform: scaleX(1) ;
-            &:active {
-                transform: scaleX(0.75) ;
-                transition: transform 400ms ease-in-out ;
-            }
-            &:active + .menu__circle-check {
-                transform: scaleX(1)
-            }
-            &:active + .menu__circle-check i {
-                transform: rotate(360deg)
-            }
-        }
-        h3 {
+.carte-menu-1 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu both ;
+}
+
+.carte-menu-2 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*2 both ;
+}
+
+.carte-menu-3 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*3 both ;
+}
+
+.carte-menu-4 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*4 both ; 
+}
+
+.carte-menu-5 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*5 both ; 
+}
+
+.carte-menu-6 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*6 both ;
+}
+
+.carte-menu-7 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*7 both ;
+}
+
+.carte-menu-8 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*8 both ; 
+}
+
+.carte-menu-9 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*9 both ;
+}
+
+.carte-menu-10 {
+    @include carte-menu ;
+
+    h3 {
+        @include carte-menu-h3
+    }
+
+    animation: carte-menu 1s $animation-delay-affichage-carte-menu*10 both ; 
+}
+
+.carte-menu__descriptif {
+    width: 100% ;
+    cursor: $pointer ;
+    
+    &:active + .carte-menu__circle-check {
+        transform: scaleX(1) ;
+    }
+
+    &:active + .carte-menu__circle-check i {
+        transform: rotate(360deg) ;
+    }
+
+    &__accompagnement-prix {
+        display: flex ;
+        justify-content: space-between ;
+        padding : 10px 20px 10px 10px ;
+        
+        p {
             margin : 0 ;
-            padding-top: 10px ;
-            padding-left: 10px ;
+            font-size: 14px ;
         }
-        .menu__accompagnement-prix {
-            display: flex ;
-            justify-content: space-between ;
-            padding : 10px 20px 10px 10px ;
-            p {
-                margin : 0 ;
-                font-size: 14px ;
-            }
-            .accompagnement {
-                white-space: nowrap ;
-                overflow: hidden ;
-                text-overflow: ellipsis ;
-            }
-            .prix {
-                font-weight: bold ;
-            }
+        
+        .accompagnement {
+            white-space: nowrap ;
+            overflow: hidden ;
+            text-overflow: ellipsis ;
+            position: relative ;
+            left: 0 ;
         }
-        .menu__circle-check {
-            width: 25% ;
-            background-color: $couleur-tertiaire ;
-            border-radius: 0 15px 15px 0 ;
-            display: flex ;
-            vertical-align: middle ;
-            justify-content: center ;
-            transform-origin: 100% ;
-            transform: scaleX(0) ;
-            transition: transform 400ms ease-in-out ;
+        
+        .prix {
+            font-weight: bold ;
+            position: relative ;
+            right : 0 ;
         }
-        .menu__circle-check i {
-            display: block ;
-            font-size: 40px ;
-            color: $couleur-tertiaire ;
-            background-color: white ;
-            border-radius: 150px ;
-            margin: auto ;
-            transition: transform 400ms ease-in-out ;
-        }
+    }
+}
+
+.carte-menu__circle-check {
+    width: 25% ;
+    background-color: $couleur-tertiaire ;
+    border-radius: 0 15px 15px 0 ;
+    display: flex ;
+    vertical-align: middle ;
+    justify-content: center ;
+    transform-origin: 100% ;
+    transform: scaleX(0) ;
+    transition: transform 400ms ease-in-out ;
+
+    i {
+        display: block ;
+        font-size: 40px ;
+        color: $couleur-tertiaire ;
+        background-color: white ;
+        border-radius: 150px ;
+        margin: auto ;
+        transition: transform 400ms ease-in-out ;
     }
 }
 
@@ -536,7 +696,3 @@ footer {
         width: $width-bouton-rose ;
     }
 }
-
-
-
-
