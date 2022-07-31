@@ -1,0 +1,20 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet 3 OpenClassrooms",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "sass --watch ./style.scss:./style.css",
+    "prefix" : "postcss ./style.css --use autoprefixer -d ./prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/ThomasGrimault/ohmyfood.git)"
+  },
+  "keywords": [
+    "\u001b[3~"
+  ],
+  "author": "Thomas Grimault",
+  "license": "ISC",
+  "browserlist": "last 4 versions"
+}
