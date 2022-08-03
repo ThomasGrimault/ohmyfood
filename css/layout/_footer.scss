@@ -1,24 +1,3 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0 ;
-}
-
-header {
-    display: flex ;
-    justify-content: center ;
-    padding-top: 20px ;
-    padding-bottom: 10px ;
-   
-    img {
-        width: 45% ;
-
-        @media all and (min-width: $min-width-tablette) {
-            min-width: 340px ;
-            max-width: 30% ;
-        }
-    }
-}
-
 footer {
     color: white ;
     background-color: rgb(58, 55, 55);
