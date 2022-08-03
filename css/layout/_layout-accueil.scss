@@ -1,0 +1,99 @@
+.page-accueil {
+    animation: page-accueil 0s 3s both ;
+}
+
+#localisation {
+    padding-top : 15px ;
+    padding-bottom : 15px ;
+    display: flex ;
+    justify-content: center ;
+    background-color : $localisation-bg-color ;
+    border-top : 2px solid darken($localisation-bg-color, 10%) ;
+    box-shadow: inset 0px 2px darken($localisation-bg-color, 5%) ;
+
+    i {
+        margin-left: 40px ;
+        margin-right: 10px ;
+    }
+
+    input{
+        font-weight: bold ;
+        background-color: $localisation-bg-color ;
+        border : none ;
+        margin-left: 10px ;
+    }
+}
+
+#présentation {
+    display: flex ;
+    flex-direction: column ;
+    justify-content: center ;
+    background-color: $bg-color-gris-clair ;
+    padding-top: 40px ;
+    padding-bottom: 60px ;
+
+    h1 {
+        width: 60% ;
+        font-size: 22px ;
+        font-weight: bolder ;
+        text-align: center ;
+        margin: auto ;
+        margin-bottom: 15px ;
+    }
+
+    p {
+        font-size: 17px ;
+        width: 80% ;
+        color: lighten(black, 50%) ;
+        text-align: center ;
+        margin: auto ;
+        margin-bottom: 30px ;
+    }
+
+    a {
+        width : $width-bouton-rose ;
+        text-decoration: none ;
+        color: white ;
+        margin: auto ;
+
+        @media all and (min-width: $min-width-tablette) {
+            max-width: $width-bouton-rose-grand ; 
+        }
+    }
+}
+
+#fonctionnement {
+    padding-top: 30px ;
+    padding-bottom: 40px ;
+
+    @media all and (min-width: $min-width-tablette) {
+        display: flex ;
+        justify-content: space-between ;
+        flex-wrap: wrap ;
+        
+    }
+
+    h2{
+        padding-left: 20px ;
+        padding-bottom: 10px ;
+    }
+}
+
+#restaurants {
+    display: flex ;
+    flex-direction: column ;
+    background-color: $bg-color-gris-clair ;
+    padding-bottom: 45px ;
+
+    h2 {
+        padding-top: 30px ;
+        padding-left: 20px ;
+    }
+
+    .restaurant-media-query {
+        @media all and (min-width: $min-width-tablette) {
+            display: flex ;
+            flex-wrap: wrap ;
+        }
+    }
+}

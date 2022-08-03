@@ -1,0 +1,51 @@
+// ======== Animations accueil ======== //
+
+@keyframes loader {
+    0% {
+        Transform: translateX(-9999px)
+    }
+    100% {
+        Transform: translateX(0)
+    }
+}
+
+@keyframes loader-barre {
+    0% {
+        transform: scaleX(0) ;
+    }
+    100% {
+        transform: scaleX(1)
+    }
+}
+
+@keyframes page-accueil {
+    0% {
+        transform: translateX(-9999px) ;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+// ======== Animations menus ======== //
+
+@keyframes carte-menu {
+    0% {
+        opacity: 0 ;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1 ;
+        transform: translateY(0);
+    }
+}
+
+@keyframes carte-menu__circle-check {
+    0% {
+       width: 0 ;
+    }
+    100% {
+        width: 25% ;
+    }
+}
+

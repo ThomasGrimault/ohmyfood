@@ -1,0 +1,26 @@
+// Couleurs
+$couleur-primaire: #9356DC ;
+$couleur-secondaire: #FF79DA ;
+$couleur-tertiaire: #99E2D0 ;
+$localisation-bg-color: rgb(237, 236, 236) ;
+$bg-color-gris-clair: rgb(245, 245, 245) ;
+$bouton-rose-bg-color: linear-gradient(175deg, $couleur-secondaire, $couleur-primaire) ;
+$bouton-rose-bg-color-lighten: linear-gradient(175deg, lighten($couleur-secondaire, 3%), lighten($couleur-primaire, 3%)) ;
+
+// Padding et margin
+$padding-left-h1-h2-menu: 25px ;
+
+// Largeur carte
+$width-mobile-cartes: 90% ;
+
+// Boutons
+$width-bouton-rose: 55% ;
+$width-bouton-rose-grand: 400px ;
+$width-bouton-coeur: 25px ;
+
+// curseur des boutons
+$cursor: pointer ;
+
+// Breakpoints media queries
+$min-width-tablette: 768px ;
+$min-width-desktop: 992px ;

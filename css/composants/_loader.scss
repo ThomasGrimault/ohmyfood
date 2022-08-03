@@ -1,0 +1,29 @@
+.loader {
+    width: 100% ;
+    display: flex ;
+    flex-direction: column ;
+    margin-top: 200px ;
+    position: absolute ;
+    animation: loader ;
+    
+    p {
+        font-family: 'Shrikhand', cursive ;
+        margin: auto ;
+        padding-bottom: 15px ;
+    }
+
+    &-cadre {
+        width: 80% ;
+        border : 2px solid $couleur-primaire ;
+        margin: auto ;
+    }
+
+    &-barre {
+        background-color: $couleur-secondaire ;
+        margin: 2px ;
+        padding: 5px ;
+        transform-origin: 0% ;
+        animation: loader-barre 2s 500ms ;
+        animation-fill-mode: both ;
+    }
+}
