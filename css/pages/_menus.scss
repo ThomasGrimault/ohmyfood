@@ -35,10 +35,6 @@
     display: flex ;
     flex-direction: column ;
 
-    @media all and (min-width: $min-width-tablette) {
-        flex-direction: raw ;
-    }
-
     &__nom-restaurant {
         font-family: shrikhand ;
         font-size: 13px ;
