@@ -37,12 +37,12 @@
         text-align: center ;
     }
 
-    &:hover {
+    &--colorée{
         background-color: lighten($couleur-primaire, 35%) ;
         i {
             color: $couleur-primaire ;
         }
-    } 
+    }
 }
 
 .carte-restaurant {
@@ -75,17 +75,17 @@
 
         .tampon {
             width: 75px ;
-            height: 25px ;
+            height: 30px ;
             font-size: 13px ;
             font-weight: bold ;
-            display: flex ;
-            justify-content: center ;
-            align-items: center ;
-            color: darken($couleur-tertiaire, 35%) ;
+            line-height: 30px ;
+            vertical-align: middle ;
+            text-align: center ;
+            color: darken($couleur-tertiaire, 40%) ;
             background-color: $couleur-tertiaire ;
             border-radius: 2px ;
             position: absolute ;
-            right : 30px ;
+            right : 10px ;
             margin-top: 20px ;
             z-index: 2 ;
 

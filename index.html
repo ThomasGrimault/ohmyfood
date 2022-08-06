@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/aa8edaacd5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');</style>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/prefixed/style.css">
     <title>ohmyfood - Accueil</title>
 </head>
 
@@ -36,7 +36,7 @@
             <section id="présentation">
                 <h1>Réservez le menu qui vous convient</h1>
                 <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-                <a href="#liste-restaurants"><button class="bouton-rose">Explorer nos restaurants</button></a>
+                <a href="#liste-restaurants"><div class="bouton-rose"><span>Explorer nos restaurants</span></div></a>
             </section>
 
             <section id="fonctionnement">
@@ -55,7 +55,7 @@
                     <p class="carte-fonct__consigne">Choisissez votre menu</p>
                 </div>
 
-                <div class="carte-fonct">
+                <div class="carte-fonct carte-fonct--colorée">
                     <p class="carte-fonct__numéro">3</p>
                     <i class="fa-solid fa-store"></i>
                     <p class="carte-fonct__consigne">Dégustez au restaurant</p>
@@ -85,7 +85,7 @@
                             </a>
                             <button class="bouton-coeur">
                                 <i class="fa-regular fa-heart"></i>
-                                <div class="bouton-coeur-plein"><i class="fa-solid fa-heart"></i></div>
+                                <span class="bouton-coeur-plein"><i class="fa-solid fa-heart"></i></span>
                             </button>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                             </a>
                             <button class="bouton-coeur">
                                 <i class="fa-regular fa-heart"></i>
-                                <div class="bouton-coeur-plein"><i class="fa-solid fa-heart"></i></div>
+                                <span class="bouton-coeur-plein"><i class="fa-solid fa-heart"></i></span>
                             </button>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                             </a>
                             <button class="bouton-coeur">
                                 <i class="fa-regular fa-heart"></i>
-                                <div class="bouton-coeur-plein"><i class="fa-solid fa-heart"></i></div>
+                                <span class="bouton-coeur-plein"><i class="fa-solid fa-heart"></i></span>
                             </button>
                         </div>
                     </div>
